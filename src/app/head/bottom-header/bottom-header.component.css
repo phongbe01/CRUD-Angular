@@ -1,0 +1,22 @@
+div {
+  width: 100%;
+  height: 70px;
+}
+
+.logo {
+  width: 100%;
+  background-color: black;
+}
+
+.nav-primary {
+  background-color: bisque;
+}
+
+.input_box {
+  background-color: antiquewhite;
+}
+
+.user {
+  background-color: azure;
+}
+
