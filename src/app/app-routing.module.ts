@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'products', component: ProductsComponent},
   {path: 'todo', component: TodoComponent},
   {path: 'products/create', component: ProductAddComponent},
-  {path: 'products/detail/:id', component: ProductDetailComponent}
+  {path: 'products/:id/detail', component: ProductDetailComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

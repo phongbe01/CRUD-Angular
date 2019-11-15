@@ -10,7 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { RatingComponent } from './rating/rating.component';
 import { BodyComponent } from './body/body.component';
 import { TodoComponent } from './todo/todo.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductAddComponent } from './products/product-add/product-add.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
@@ -30,7 +30,8 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

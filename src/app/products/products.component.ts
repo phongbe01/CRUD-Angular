@@ -1,44 +1,22 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
+import {ProductService} from '../services/product.service';
+import {ProductInterfaceService, Products} from '../services/product-interface.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  providers: [{provide: ProductInterfaceService, useClass: ProductService }]
 })
 export class ProductsComponent implements OnInit {
-  products =  [
-    {
-      name: 'Phone XL',
-      price: 799,
-      description: 'A large phone with one of the best screens',
-      quality: 10,
-      rating: 5,
-    },
-    {
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras',
-      quality: 12,
-      rating: 3,
-    },
-    {
-      name: 'Phone Standard',
-      price: 299,
-      description: '',
-      quality: 20,
-      rating: 4,
-    },
-    {
-      name: 'Phone SamSung',
-      price: 250,
-      description: 'Black',
-      quality: 5,
-      rating: 1,
-    }
-  ];
-  constructor() { }
+  products: Products[];
+  constructor(private productService: ProductInterfaceService, private router: Router) { }
 
   ngOnInit() {
+    this.products = this.productService.getProducts();
   }
-
+  onClick(index: number) {
+    return this.productService.getById(index);
+  }
 }

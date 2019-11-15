@@ -12,13 +12,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let product of products; let i = index" [attr.data-index]="i">
-      <th scope="row">{{i}}</th>
+      <th scope="row">{{product.id}}</th>
       <td>{{product.name}}</td>
       <td>{{product.price}}</td>
       <td>{{product.description}}</td>
       <td><app-rating [rating]="product.rating"></app-rating></td>
       <td>
-        <button class="btn btn-primary m-sm-1" [routerLink]="['/products/detail', i]">Update</button>
+        <button class="btn btn-primary m-sm-1" [routerLink]="['/products',product.id,'detail']" (click)="onClick(i)">Update</button>
         <button class="btn btn-danger">Delete</button>
       </td>
     </tr>
