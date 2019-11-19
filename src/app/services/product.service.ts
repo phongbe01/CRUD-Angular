@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ProductInterfaceService, Products} from './product-interface.service';
+import { ProductInterfaceService} from './product-interface.service';
+import {IProduct} from '../products/iproduct';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService implements ProductInterfaceService {
-  getProducts(): Products[] {
-    const products: Products[] = [
+     products: IProduct[] = [
       {
         id: 1,
         name: 'Phone XL',
@@ -40,15 +40,28 @@ export class ProductService implements ProductInterfaceService {
         rating: 1,
       }
     ];
-    return products;
+
+  constructor() { }
+
+  getProducts(): IProduct[] {
+    return this.products;
   }
-  getById(id: number): Products {
-    for (const product of this.getProducts()) {
+
+  getById(id: number): IProduct {
+    for (const product of this.products) {
       if (product.id === id) {
         return product;
       }
     }
   }
-  constructor() { }
+  update(data: IProduct, index: number) {
+    const  product = this.getById(index);
+    product.name = data.name;
+    product.price = data.price;
+    product.description = data.description;
+    product.quality = data.quality;
+    product.rating = data.rating;
+    this.products[index - 1] = product;
+  }
 
 }

@@ -20,3 +20,8 @@ div {
   background-color: azure;
 }
 
+.icon {
+  padding-top: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}

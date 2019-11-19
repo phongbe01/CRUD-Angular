@@ -1,0 +1,19 @@
+.body {
+  margin: 0px 10px 0px 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.block-slide {
+  padding-bottom: 4rem;
+}
+
+.block-banner {
+  padding: 0 .5rem .5rem .5rem;
+}
+
+.block-product-sales {
+  padding: 40px 30px 30px 40px;
+}
+
+

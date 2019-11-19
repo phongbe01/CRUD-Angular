@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HeadComponent} from './head/head.component';
-import {TodoComponent} from './todo/todo.component';
-import {ProductsComponent} from './products/products.component';
-import {ProductAddComponent} from './products/product-add/product-add.component';
-import {ProductDetailComponent} from './products/product-detail/product-detail.component';
+import {ProductListComponent} from './products/product-list/product-list.component';
+import {AuthComponent} from './auth/auth.component';
+import {MainContainerComponent} from './body/main-container/main-container.component';
+import {AccountComponent} from './auth/account/account.component';
 
 
 const routes: Routes = [
-  {path: 'products', component: ProductsComponent},
-  {path: 'todo', component: TodoComponent},
-  {path: 'products/create', component: ProductAddComponent},
-  {path: 'products/:id/detail', component: ProductDetailComponent}
+  {path: 'products/shirt', component: MainContainerComponent},
+  {path: 'customer/account', component: AccountComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface Products {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  quality: number;
-  rating: number;
-}
+import {IProduct} from '../products/iproduct';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +7,7 @@ export interface Products {
 
 export abstract class ProductInterfaceService {
 
-  abstract getProducts(): Products[];
-  abstract getById(id): Products;
+  abstract getProducts(): IProduct[];
+  abstract getById(id): IProduct;
+  abstract update(product: IProduct, index: number);
 }

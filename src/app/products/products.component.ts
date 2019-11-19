@@ -1,7 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import {ProductService} from '../services/product.service';
-import {ProductInterfaceService, Products} from '../services/product-interface.service';
+import {ProductInterfaceService} from '../services/product-interface.service';
 import { Router} from '@angular/router';
+import {IProduct} from './iproduct';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import { Router} from '@angular/router';
   providers: [{provide: ProductInterfaceService, useClass: ProductService }]
 })
 export class ProductsComponent implements OnInit {
-  products: Products[];
+  products: IProduct[];
   constructor(private productService: ProductInterfaceService, private router: Router) { }
 
   ngOnInit() {
